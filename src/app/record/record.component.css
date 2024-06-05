@@ -1,0 +1,16 @@
+.patient{
+    margin: 2em 0;
+    padding: 2em;
+    border-radius: 20px;
+}
+
+.patient section{
+    display: flex;
+    margin: 1em 0;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.patient p{
+    line-height: 1.5;
+}

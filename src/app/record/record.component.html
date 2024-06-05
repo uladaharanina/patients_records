@@ -1,3 +1,11 @@
-<ul>
-    <li *ngFor="let patient of patients">{{ patient.name }}</li>
-</ul>
+<div *ngFor="let patient of patients" class="patient"  [ngStyle]="{ 'background-color': applyColor() }">
+    <p><b>Full Name: </b> {{ patient.name }} {{ patient.lastName }}</p>
+    <section>
+        <p><b>Age:</b> {{ patient.age }}</p>
+        <p><b>Weight:</b> {{ patient.weight }}</p>
+        <p><b>Height:</b> {{ patient.height }}</p>
+    </section>
+  
+    <p><b>Diagnosis</b>: {{ patient.diagnosis }}</p>
+    <hr>
+  </div>
