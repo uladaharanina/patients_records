@@ -1,0 +1,12 @@
+header ul{
+    background-color: rgb(44, 43, 43);
+    width:100%;
+    color: white;
+    padding: 10px 0;
+    text-align: right;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
