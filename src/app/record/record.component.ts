@@ -25,4 +25,11 @@ applyColor = () => {
   const index: number = Math.floor(Math.random() * this.blueShades.length);
   return this.blueShades[index];
 }
+
+//Delete Record
+deleteRecord = (index:number) => {
+  this.patients.splice(index,1);
+}
+
+
 }

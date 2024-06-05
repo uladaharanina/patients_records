@@ -1,11 +1,19 @@
-<div *ngFor="let patient of patients" class="patient"  [ngStyle]="{ 'background-color': applyColor() }">
-    <p><b>Full Name: </b> {{ patient.name }} {{ patient.lastName }}</p>
-    <section>
-        <p><b>Age:</b> {{ patient.age }}</p>
-        <p><b>Weight:</b> {{ patient.weight }}</p>
-        <p><b>Height:</b> {{ patient.height }}</p>
-    </section>
-  
-    <p><b>Diagnosis</b>: {{ patient.diagnosis }}</p>
-    <hr>
+<div *ngFor="let patient of patients; let i = index" class="patient"  [ngStyle]="{ 'background-color': applyColor() }">
+    <div>
+        <p><b>Full Name: </b> {{ patient.name }} {{ patient.lastName }}</p>
+        <section>
+            <p><b>Age:</b> {{ patient.age }}</p>
+            <p><b>Weight:</b> {{ patient.weight }}</p>
+            <p><b>Height:</b> {{ patient.height }}</p>
+        </section>
+      
+        <p><b>Diagnosis</b>: {{ patient.diagnosis }}</p>
+        <hr>
+    
+    </div>
+    <div class="record_modification_block">
+        <button id="modify_btn" >Modify Record</button>
+        <button id="delete_btn" (click)="deleteRecord(i)">Delete Record</button>
+    </div>
+    
   </div>
