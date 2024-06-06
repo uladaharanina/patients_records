@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RecordComponent } from '../record/record.component';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RecordComponent],
+  imports: [RecordComponent, FormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -51,5 +52,17 @@ export class HomeComponent {
       diagnosis: 'Anemia'
     }
   ];
+
+  visibility: boolean = false;
+  selectedPatient = null; // for modification
+
+  //Display form
+  openForm = (i:number) =>{
+    this.visibility = true;
+    this.selectedPatient = this.patients[i];
+  }
+  hideForm = () =>{
+    this.visibility = false;
+  }
   
 }

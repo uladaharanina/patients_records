@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {NgFor, NgStyle} from '@angular/common';
 
 @Component({
@@ -11,6 +10,7 @@ import {NgFor, NgStyle} from '@angular/common';
 })
 export class RecordComponent {
 @Input() patients: any[] = [];
+@Output() openFormEvent = new EventEmitter<number>();
 
  blueShades: string[] = [
   'rgba(255,39,169, 0.1) ',  // Base blue color
@@ -31,5 +31,24 @@ deleteRecord = (index:number) => {
   this.patients.splice(index,1);
 }
 
+showForm = (i:number) => {
+  this.openFormEvent.emit(i);
+}
+
+/*
+
+modifyRecord = (index:number, data:any) =>{
+  this.patients[index] = {
+    name: data.name,
+    lastName: data.lastName,
+    age: data.age,
+    weight: data.weight,
+    height: data.height,
+    diagnosis: data.diagnosis
+  }
+
+  
+}
+*/
 
 }

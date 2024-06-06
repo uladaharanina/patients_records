@@ -1,4 +1,5 @@
 <h1>List of patients</h1>
 
 <!--List all existing patients-->
-<app-record [patients]="patients"></app-record>
+<app-record [patients]="patients" (openFormEvent)="openForm($event)"></app-record>
+<app-form [visibility]="visibility" (closeFormEvent)="hideForm()" [selectedPatient] = "selectedPatient"></app-form>

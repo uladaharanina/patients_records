@@ -1,0 +1,11 @@
+<form id="patient_form" *ngIf="visibility" >
+    <p (click)="closeForm()">x</p>
+    <h3>Patient's Data</h3>
+    <input type="text" placeholder="First name..." [value]="selectedPatient.name" required>
+    <input type="text" placeholder="Last name..." [value]="selectedPatient.lastName" required>
+    <input type="text" placeholder="Age.." [value]="selectedPatient.age" required>
+    <input type="text" placeholder="Weight.." [value]="selectedPatient.weight" required>
+    <input type="text" placeholder="Height.." [value]="selectedPatient.height" required>
+    <input type="text" placeholder="Diagnosis.." [value]="selectedPatient.diagnosis" required>
+    <input type="submit" value="Submit">
+</form>
